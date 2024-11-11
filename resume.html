@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayank Bhatnagar</title>
+    <!-- remix icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script type="text/javascript">
+
+        function Printme() {
+            document.getElementById("printimg").style.visibility = "hidden";
+            document.getElementById("btnclose").style.visibility = "hidden";
+            window.scrollTo(0, 0);
+            window.print();
+            document.getElementById("printimg").style.visibility = "visible";
+            document.getElementById("btnclose").style.visibility = "visible";
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .paddingLeft{
+            padding-left: 20px;
+        }
+
+        :root {
+            --font-family-main: 'Montserrat', sans-serif;
+            /* Change to preferred font */
+            --font-weight-bold: 700;
+            /* For headings and name */
+            --font-weight-regular: 400;
+            /* For standard text */
+            --font-weight-light: 300;
+            /* For subtler text */
+            --lgfont-size: 22pt;
+            --normal-font: 11pt;
+            --smlfont-size: 8pt;
+            --primary-clr: #222222;
+            --secondary-clr: #555555;
+        }
+
+        body {
+            padding: 50px;
+        }
+
+        .body {
+            font-family: var(--font-family-main);
+            width: 100%;
+            position: relative;
+            text-align: justify;
+            font-size: var(--smlfont-size);
+            color: var(--primary-clr);
+        }
+
+        .header-part {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            background: #f2f2f2;
+        }
+
+        .profileHeading{
+            margin-top: 5.5px;
+        }
+
+        .circle-frame {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 20px;
+            right: 100px;
+        }
+
+        .circle-frame #ProfilePic{
+            border-radius: 50%;
+            border: 4px solid var(--primary-clr);
+        }
+
+        .nameProfile {
+            font-size: var(--lgfont-size);
+        }
+
+        .margin15 {
+            margin-bottom: 15px;
+        }
+
+        .boldName {
+            color: var(--secondary-clr);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .spacedText {
+            letter-spacing: 5px;
+        }
+
+        .paragraph {
+            font-size: var(--smlfont-size);
+        }
+
+        .heading {
+            font-weight: var(--font-weight-bold);
+            font-size: 14pt;
+            margin-bottom: 20px;
+        }
+
+        .table-frame {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+            /* border: 1px solid black; */
+        }
+
+        .table-frame td {
+            /* border: 1px solid black; */
+            padding: 10px;
+        }
+
+        .printMe {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 99;
+        }
+
+        ul._tableList {
+            counter-reset: unorder;
+            width: 100%;
+            list-style-type: none;
+            font-size: 9pt;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        ul._tableList>li {
+            counter-increment: unorder;
+            padding-left: 20px;
+        }
+
+        ul._tableList>li:before {
+            content: "●";
+            padding-right: 1em;
+            /* display: table-cell; */
+            position: absolute;
+            left: 0px;
+            font-weight: normal;
+        }
+
+
+        /* print Css */
+        @media print {
+            .body {
+                margin: 0;
+                padding: 0;
+                font-size: 11pt;
+            }
+
+            .printMe {
+                display: none;
+            }
+
+
+            .print-footer {
+                display: table;
+                position: fixed;
+                left: 0;
+                right: 0;
+                color: #000;
+                width: 100%;
+                bottom: 20px;
+                height: 50px;
+                margin: 0 auto;
+                font-weight: bold;
+            }
+
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            .pagebreak {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td>
+                    <div class="header-part">
+                        <p class="nameProfile paddingLeft">Mayank <span class="boldName"><b>Bhatnagar</b></span></p>
+                        <p class="spacedText paddingLeft">FRONTEND DEVELOPER</p>
+                        <div class="circle-frame">
+                            <img src="./profile_pic.webp" width="128px" height="128px" id="ProfilePic" alt="Profile Picture" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" class="table-frame" border="0">
+                        <tr>
+                            <td width="35%">
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tr>
+                                        <td width="20px" valign="top"><i class="fa-solid fa-phone"></i></td>
+                                        <td valign="top">+91 7303634797</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top"><i class="fa-solid fa-location-dot"></i></td>
+                                        <td valign="top">
+                                            SE-355 Shastringar Ghaziabad
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top"><i class="fa-solid fa-envelope"></i></td>
+                                        <td valign="top">
+                                            mkbhatnagar078@gmail.com
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top"><i class="fa-brands fa-google"></i></td>
+                                        <td valign="top">
+                                            reallygreatsite.com
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="65%" valign="top">
+                                <p class="spacedText heading profileHeading">PROFILE</p>
+                                <p class="paragraph" style="line-height: 1.5;">I am a qualified and professional web
+                                    developer with five years of
+                                    experience in database administration and website design. Strong
+                                    creative and analytical skills. Team player with an eye for detail.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" class="table-frame" border="1" >
+                        <tr>
+                            <td width="35%" valign="top">
+                                <p class="spacedText heading" >SKILLS</p>
+                                <ul class="_tableList" style="margin-top: 0;">
+                                    <li>Web Design</li>
+                                    <li>Design Thinking</li>
+                                    <li>Wireframe Creation</li>
+                                    <li>Version Control</li>
+                                    <li>Front End Coding</li>
+                                    <li>Problem-Solving</li>
+                                    <li>Computer Literacy</li>
+                                    <li>Project Management Tools</li>
+                                    <li>Strong Communication</li>
+                                </ul>
+                            </td>
+                            <td width="65%" valign="top" rowspan="3">
+                                <p class="spacedText heading">EXPERIENCE</p>
+                                <p style="font-size: 9pt; font-weight: 700; margin-bottom: 8px;">APPLICATIONS DEVELOPER
+                                </p>
+                                <p style="margin-bottom: 8px;">4QT Quarter Technology Pvt Ltd | iThum Noida62</p>
+                                <p style="margin-bottom: 8px;">Frontend Developer | 08/2024 - Present</p>
+                                <ul class="_tableList">
+                                    <li>Developed and maintained front-end applications using HTML, CSS, JavaScript, C#, and ASP.NET to generate legal
+                                        documents.</li>
+                                    <li>Collaborated with legal and sales teams to align document functionality with business needs.</li>
+                                    <li>Optimized front-end code for faster load times and accessibility, leading to improved process efficiency.</li>
+                                </ul>
+                                <br />
+                                <p style="font-size: 9pt; font-weight: 700; margin-bottom: 8px;">APPLICATIONS DEVELOPER
+                                </p>
+                                <p style="margin-bottom: 8px;">Akanila Technologies Pvt. Ltd. | Wave City Ghaziabad</p>
+                                <p style="margin-bottom: 8px;">Frontend Developer | 05/2024 - 08/2024</p>
+                                <ul class="_tableList">
+                                    <li>Developed responsive and user-friendly web interfaces using HTML, CSS, and JavaScript.</li>
+                                    <li>Collaborated with UX/UI designers to translate design mockups into interactive web pages.</li>
+                                    <li>Ensured cross-browser compatibility and responsiveness across various devices.</li>
+                                </ul>
+                                <br />
+                                <p style="font-size: 9pt; font-weight: 700; margin-bottom: 8px;">APPLICATIONS DEVELOPER
+                                </p>
+                                <p style="margin-bottom: 8px;">Royal Educational Institute | Dasna Crossing Ghaziabad</p>
+                                <p style="margin-bottom: 8px;">Frontend Instructor | 01/2024 - 04/2024</p>
+                                <ul class="_tableList">
+                                    <li>Developed and maintained their websites using HTML, CSS, JavaScript, and various CMS platforms.</li>
+                                    <li>Provided IT instruction and training to students, covering web development and general IT concepts.</li>
+                                    <li>Managed and maintained the computer lab, ensuring all systems were functional and up-to-date.</li>
+                                </ul>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" style="text-align: left;">
+                                <p class="spacedText heading">EDUCATION</p>
+                                <p style="font-size: 9pt; font-weight: 700; margin-bottom: 8px;">Graduation</p>
+                                <p style="margin-bottom: 8px;">Inmantec Institute</p>
+                                <p>BCA | 05/2024</p>
+                                <br />
+                                
+                                <p style="font-size: 9pt; font-weight: 700; margin-bottom: 8px;">SECONDARY SCHOOL</p>
+                                <p style="margin-bottom: 8px;">BR International Public School</p>
+                                <p>12th PCM | 04/2020</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" style="text-align: left;">
+                                <p class="spacedText heading" >CERTIFICATION</p>
+                                <ul class="_tableList" style="margin-top: 0;">
+                                    <li>Full stack Mern Development<br />AlmaBetter</li>
+                                    <li>Responsive Web Design<br />FreeCodechamp</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div class="printMe">
+            <input id="printimg" runat="server" class="button" name="printimg"
+                style="width: 80px; position: relative; height: 25px" onclick="Printme();" type="button"
+                value="Print" />
+            <input id="btnclose" class="button" name="printimg" onclick="javascript: window.close();" size="20"
+                style="width: 80px; position: relative; height: 25px" type="button" value="Close" />
+
+        </div>
+    </div>
+</body>
+
+</html>
